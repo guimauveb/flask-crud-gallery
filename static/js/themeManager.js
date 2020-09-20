@@ -99,7 +99,6 @@ var themeManager = {};
         el.remove();
     }
 
-
     /* Delete img from the db */
     this.deletePic = async function(id) {
         try {
