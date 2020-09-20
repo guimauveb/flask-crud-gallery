@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html id="html" lang="fr">
+    <head id="head">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+        <link rel="icon"type="image/png" href="{{ url_for('static', filename='favico/ico.png') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/themes.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/modal.css') }}">
+
+        <title> guimauve{% block title %}{% endblock %}</title>
+
+    </head>
+    <body class="blog-section">
+        <header>
+            <div id="header">
+                <div id="nav-container">
+
+                    <nav class ="nav" id="nav">
+                        <div id="left-logo" id="nav-link-guimauve">
+                        </div>
+
+                        <div id="center-menu">
+                            <a href="/">Cédric McPoussin</a>
+                        </div>
+
+                        <div id="right-search">
+                        </div>
+                    </nav>
+
+                </div>
+
+            </div>            
+        </header>
+
+        </div>
+        {% block main %}
+        {% endblock %}
+        <div id="footer-wrapper">
+            <footer class="footer-element" id="main-footer">
+                <div class="footer-element" id="left-info-footer">
+                </div>
+                <div class="footer-element" id="center-tags-footer">
+                    Cédric McPoussin
+                </div>
+                <div class="footer-element" id="right-social-footer">
+                </div>
+            </footer>
+        </div>
+    </body>
+
+</html>
+

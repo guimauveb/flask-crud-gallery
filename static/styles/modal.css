@@ -1,0 +1,201 @@
+.modal-theme {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0, 1); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-theme-content {
+    border-radius: 2px;
+    display: grid;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 0;
+    width: 40vw;
+    max-width: 1268px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-theme-header {
+    padding: 16px 16px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.modal-theme-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.details-image {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+    text-align: center;
+    max-width: 100%;
+    margin: 10px 0;
+}
+
+.modal-theme-body {
+    display: grid;
+    grid-template-rows: auto;
+    max-width: 100%;
+    padding: 2px 16px;
+    background-color: rgba(255, 255, 255, 1);
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.modal-theme-desc {
+    padding: 8px;
+}
+
+.modal-theme-footer {
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 41px;
+}
+
+.themes-btn {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    border-radius:2px;
+    background-color:rgba(240, 240, 240, 1);
+    display:inline-block;
+    cursor:pointer;
+    color:rgba(60, 60, 60, 1);
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 12px;
+    text-shadow:0px 1px 0px #ffffff;
+    outline: none;
+    border: none;
+}
+
+.themes-btn:hover {
+    color: rgba(255, 150, 0);
+}
+
+.theme-btn:active {
+    position:relative;
+    top:1px;
+}
+
+.theme-modal-img-container {
+    position: relative;
+    max-width: 100%;
+    border-radius: 2px;
+    /* Needed otherwise black overlay is slightly bigger than the img */
+    font-size: 0;
+}
+
+/* Add btn container */
+.theme-modal-img-container-add-btn {
+    position: relative;
+    min-height: 200px;
+    border-radius: 2px;
+    /* Needed otherwise black overlay is slightly bigger than the img */
+    font-size: 0;
+}
+
+.theme-modal-img-container-middle {
+    transition: .5s ease;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 2px;
+    height: 100%;
+}
+
+.theme-modal-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.theme-modal-img-container-link {
+    position: absolute;
+    color: rgba(221, 221, 221, 1);
+    top: 0;
+    right: 0;
+    border-radius: 6px;
+    padding: 10px 30px;
+    text-align: center;
+    /*-webkit-backface-visibility: hidden;*/
+    backface-visibility: hidden;
+}
+
+.theme-modal-img-container-link:hover {
+    /* transform: translate(-50%, -45%) scale(1.2); */
+    /*transition: all ease 400ms;*/
+}
+
+.theme-modal-img-container-link-middle {
+    position: absolute;
+    color: rgba(221, 221, 221, 1);
+    top: 50%;
+    left: 50%;
+    border-radius: 6px;
+    padding: 10px 30px;
+    text-align: center;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*-webkit-backface-visibility: hidden;*/
+    backface-visibility: hidden;
+}
+
+.input-theme-modal {
+    padding: 3px 6px;
+    font-size: 15px;
+    font-family: inherit;
+    margin-bottom: 10px;
+
+}
+
+.theme-img-btn {
+    border-radius:2px;
+    background-color:rgba(240, 240, 240, .6);
+    padding: 5px;
+    display:inline-block;
+    cursor:pointer;
+    color:rgba(60, 60, 60, 1);
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.theme-img-btn:hover {
+    color: rgba(255, 150, 0);
+}
+
+.theme-btn-wrapper a {
+    text-decoration: none;
+}
+
+.theme-btn-wrapper a:link {
+    color: white;
+}
+
+.theme-btn-wrapper a:active {
+    color: white;
+}
+
+.theme-btn-wrapper a:visited {
+    color: white;
+}
+
+.theme-btn-wrapper a:hover {
+}

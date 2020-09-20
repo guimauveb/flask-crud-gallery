@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+
+{% block title %}Themes{% endblock %}
+
+{% block main %}
+
+<script src="{{ url_for('static', filename='js/themes.js') }}"></script>                         
+
+<!-- Pass CSRF token to our JS app -->
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+            themeManager.setCSRFToken('{{ csrf_token() }}');
+        });
+</script>
+
+<!-- Load db content into our javascript app -->
+<div class="unique-content-wrapper">
+    <div class="page-header">
+        <div class="header-text"><a href={{ url_for('index') }}>Gallerie</a></div>
+
+    </div>
+    <div id="body-themes-container">
+        {% for theme in themes %}
+        <div id='theme-{{ theme["id"] }}' class="theme-preview-container">
+            <div class="theme-preview-img-container">
+                <img src='{{ theme["previmg"] }}' class="theme-preview-img">  
+                <div class="theme-preview-img-container-middle">
+                    <div class="theme-preview-img-container-text">{{ theme["name"] }}</div>
+                    <div class="theme-preview-img-container-link">
+                        <div class="theme-btn-wrapper">
+                            <a class="theme-btn" href="#!" onclick='themeModal.display({{ theme["id"] }})'>Modifier</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div id="modals-container">
+
+        {% for theme in themes %}
+        <div class="modal-theme" id='modal-theme-{{ theme["id"] }}' tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+            <div class="modal-theme-content">
+                <div class="modal-theme-header">
+                    <span class="modal-theme-title" id="">Modifier - {{ theme["name"] }}</span>
+                </div>
+                <div id="modify-theme">
+                    <div class="modal-theme-body">
+                        <input type="hidden" name="theme-id" value={{ theme["id"]}}>
+                        <label for="img">Images</label>
+                        <div class="details-image" id='imgs-container-{{ theme["id"] }}'>
+                            {% for img in theme["imgs"] %}
+                            <!-- img[0] == gallery id - img[1] == unique img id - img[2] == image path -->
+                            <div class="theme-modal-img-container" id="theme-modal-container-{{ img[1] }}">
+                                <img src='{{ img[2] }}' class="theme-modal-img">  
+                                <div class="theme-modal-img-container-middle">
+                                    <div class="theme-modal-img-container-link">
+                                        <div class="theme-modal-btn-wrapper">
+                                            <a class="theme-img-btn" id="theme-img-del"href="#!" onclick='themeManager.delPic({{ img[1] }})'> 
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- Ajouter photo -->
+                            <div class="theme-modal-img-container-add-btn" id='theme-modal-img-btn-container-{{ theme["id"] }}'>
+                                <div class="theme-modal-img-container-middle">
+                                    <div class="theme-modal-img-container-link-middle">
+                                        <div class="theme-modal-btn-wrapper">
+                                            <input id="img-upl-{{ theme["id"] }}" onchange='themeManager.addPic(this, {{ theme["id"] }})' type="file"  hidden/> 
+                                            <a class="theme-img-btn" id='theme-img-add-{{ theme["id"] }}' href="#!" onclick='themeManager.uploadPic({{ theme["id"] }})'>Ajouter une photo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="label" >Nom</div>
+                        <input type="text" class="input-theme-modal" name="name" value={{ theme["name"] }}>
+                        <div class="label" >Description</div>
+                        <textarea class="input-theme-modal" name="desc" rows="4" >
+                            {{- theme["descr"] -}}
+                        </textarea>
+                            <div class="modal-theme-footer">
+                                <a class="themes-btn" onclick='themeModal.close({{ theme["id"] }})' href="#!">Fermer</a>
+                            </div>
+                    </div class="modal-content">
+                </div class="modal-dialog">
+            </div class="modal-fade">
+        </div>
+        {% endfor %}  <!-- THEMES -->
+    </div>
+</div>
+
+
+
+<!-- Load js when the dom is fully loaded -->
+<script src="{{ url_for('static', filename='js/themeManager.js') }}"></script>                         
+
+{% endblock %}
+

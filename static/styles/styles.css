@@ -1,0 +1,146 @@
+/* Common layout */
+html {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(221, 221, 221, 1);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: rgba(100, 100, 100, 1)
+}
+
+body {
+    margin: 0;
+    background-color: rgba(221, 221, 221, 1);
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+#nav-container {
+    background-color: rgba(221, 221, 221, 1);
+    height: 50px;
+    width: 100%;
+}
+
+#nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    max-width: 1024px;
+    background-color: rgba(221, 221, 221, 1);
+    margin: 0 auto;
+}
+
+nav a:link {
+    color: rgba(100, 100, 100, 1)
+}
+
+nav a:active {
+    color: rgba(100, 100, 100, 1)
+}
+
+nav a:visited {
+    color: rgba(100, 100, 100, 1)
+}
+
+nav a:hover {
+    color: rgba(100, 100, 100, 1)
+}
+
+.nav-link {
+    padding: 0 2px;
+}
+
+#left-logo {
+    padding: 14px;
+}
+
+#center-menu {
+    padding: 14px 0;
+    text-align: center;
+}
+#right-search {
+    padding: 7px 0;
+    text-align:right;
+}
+
+/* Common to all pages */
+.page-header {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: rgba(221, 221, 221, 1);
+    font-size: 2em;
+    margin: 0 auto 20px;
+    max-width: 1024px;
+    width: 100%;
+    height: auto;
+    padding: 8px 0;
+}
+
+.header-text a:link {
+    color: rgba(100, 100, 100, 1)
+}
+
+.header-text a:active {
+    color: rgba(100, 100, 100, 1)
+}
+
+.header-text a:visited {
+    color: rgba(100, 100, 100, 1)
+}
+
+.header-text a:hover {
+    color: rgba(100, 100, 100, 1)
+}
+
+.unique-content-wrapper {
+    max-width: 1024px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 20px auto;
+    width: 95%;
+}
+
+/* Footer */
+#footer-wrapper {
+    max-width: 1024px;
+    grid-row-start: 4;
+    padding: 2px;
+    grid-row-end: 5;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(221, 221, 221, 1);
+    color: rgba(100, 100, 100, 1);
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075) !important;
+}
+
+#main-footer {
+    display: grid;
+    grid-template-columns: lfr auto lfr;
+    border-color: rgba(0, 0, 0, .1);
+}
+
+.footer-element {
+    padding: 4px;
+}
+
+#left-info-footer {
+    grid-column: 1;
+}
+
+#center-tags-footer {
+    grid-column: 2;
+    text-align: center;
+}
+
+#right-social-footer {
+    grid-column: 3;
+    text-align: right;
+}
+
