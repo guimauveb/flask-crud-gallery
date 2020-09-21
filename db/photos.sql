@@ -14,7 +14,7 @@ INSERT INTO themes VALUES
     1,
     "Patience",
     CURDATE(),
-    "c du papié japoné",
+    "...",
     /* We store the img path on the server and not the image itself */
     "/static/themes/1/gal_0.jpg"
 ),
@@ -22,7 +22,7 @@ INSERT INTO themes VALUES
     2,
     "Clarisse",
     CURDATE(),
-    "la moula",
+    "...",
     "/static/themes/2/gal_0.jpg"
 );
 

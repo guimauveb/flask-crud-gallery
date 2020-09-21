@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% block title %}Themes{% endblock %}
+{% block title %}/gallery{% endblock %}
 
 {% block main %}
 
@@ -59,7 +59,7 @@
                                 <div class="theme-modal-img-container-middle">
                                     <div class="theme-modal-img-container-link">
                                         <div class="theme-modal-btn-wrapper">
-                                            <a class="theme-img-btn" id="theme-img-del"href="#!" onclick='themeManager.delPic({{ img[1] }})'> 
+                                            <a class="theme-img-btn" id="theme-img-del"href="#!" onclick='themeManager.deletePic({{ img[1] }})'> 
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </div>

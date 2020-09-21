@@ -48,7 +48,7 @@ var themeManager = {};
 
         var delp = document.createElement("a");
         delp.className = "theme-img-btn";
-        delp.onclick = function() {themeManager.delPic(id)};
+        delp.onclick = function() {themeManager.deletePic(id)};
         btnw.append(delp);
 
         var icon = document.createElement("i");
@@ -87,11 +87,6 @@ var themeManager = {};
             console.log(err);
         }
     };
-
-    /* delete routine */
-    this.delPic = function(id) {
-        this.deletePic(id);
-    }
 
     /* Remove img from the DOM */
     this.deleteHTMLPic = function(id) {
