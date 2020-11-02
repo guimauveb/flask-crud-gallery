@@ -12,12 +12,9 @@
             themeManager.setCSRFToken('{{ csrf_token() }}');
         });
 </script>
-
-<!-- Load db content into our javascript app -->
 <div class="unique-content-wrapper">
     <div class="page-header">
         <div class="header-text"><a href={{ url_for('index') }}>Gallerie</a></div>
-
     </div>
     <div id="body-themes-container">
         {% for theme in themes %}
@@ -33,14 +30,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
         {% endfor %}
-
     </div>
-
     <div id="modals-container">
-
         {% for theme in themes %}
         <div class="modal-theme" id='modal-theme-{{ theme["id"] }}' tabindex="-1" role="dialog" aria-labelledby="modalLabel">
             <div class="modal-theme-content">
@@ -92,13 +85,11 @@
                 </div class="modal-dialog">
             </div class="modal-fade">
         </div>
-        {% endfor %}  <!-- THEMES -->
+        {% endfor %}
     </div>
 </div>
 
 
-
-<!-- Load js when the dom is fully loaded -->
 <script src="{{ url_for('static', filename='js/themeManager.js') }}"></script>                         
 
 {% endblock %}
