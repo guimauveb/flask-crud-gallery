@@ -23,10 +23,10 @@ def index():
 
     themes = []
 
-    db = MySQLdb.connect(host="db-1.cga8pq9et5wb.eu-west-3.rds.amazonaws.com",
+    db = MySQLdb.connect(host="host",
             port=3306,
-            # temp user
-            user="pierre",
+            user="user",
+            passwd="passwd",
             db="photos",
             autocommit=True,
             use_unicode=True
@@ -57,9 +57,10 @@ def index():
 @application.route("/addPic", methods=["POST"])
 def addPic():
 
-    db = MySQLdb.connect(host="db-1.cga8pq9et5wb.eu-west-3.rds.amazonaws.com",
+    db = MySQLdb.connect(host="host",
             port=3306,
-            user="pierre",
+            user="user",
+            passwd="passwd",
             db="photos",
             autocommit=True,
             use_unicode=True
@@ -100,9 +101,10 @@ def addPic():
 @application.route("/deletePic", methods=["DELETE"])
 def deletePic():
 
-    db = MySQLdb.connect(host="db-1.cga8pq9et5wb.eu-west-3.rds.amazonaws.com",
+    db = MySQLdb.connect(host="host",
             port=3306,
-            user="pierre",
+            user="user",
+            passwd="passwd",
             db="photos",
             autocommit=True,
             use_unicode=True
@@ -111,7 +113,6 @@ def deletePic():
 
     # We only need to retreive the img unique id and delete the entry from the db 
     img = request.json["img"]
-    print(img)
 
     query = """DELETE FROM galleries 
                WHERE img_id = %s;
